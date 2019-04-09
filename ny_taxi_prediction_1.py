@@ -30,7 +30,7 @@ from eli5.sklearn import PermutationImportance
 
 # Make a small change to the code below to use in this problem.
 perm = PermutationImportance(first_model, random_state=1).fit(val_X, val_y)
-print(eli5.show_weights(perm, feature_names = val_X.columns.tolist()))
+eli5.show_weights(perm, feature_names = val_X.columns.tolist())
 
 """Without detailed knowledge of New York City, it's difficult to rule out most hypotheses about why latitude features matter more than longitude.
 A good next step is to disentangle the effect of being in certain parts of the city from the effect of total distance traveled.  
@@ -56,6 +56,8 @@ perm2 = PermutationImportance(second_model, random_state=1).fit(new_val_X, new_v
 
 # show the weights for the permutation importance you just calculated
 eli5.show_weights(perm2, feature_names = features_2)
+
+
 
 
 
